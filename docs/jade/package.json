@@ -1,0 +1,30 @@
+{
+  "name": "bug-hunter-docs",
+  "version": "1.0.0",
+  "description": "DOcummentation of \u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[3~\u001b[\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001bocumentation of BugHunter tool",
+  "main": "index.jade",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kentico/bug-hunter.git"
+  },
+  "keywords": [
+    "BugHunter"
+  ],
+  "author": "Zuzana Dankovcikova",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kentico/bug-hunter/issues"
+  },
+  "homepage": "https://github.com/kentico/bug-hunter#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-pug": "^3.3.0"
+  },
+  "scripts": {
+    "start": "gulp watch"
+  },
+  "dependencies": {
+    "gulp-watch": "^4.3.11",
+    "jade-bootstrap": "^1.0.14"
+  }
+}

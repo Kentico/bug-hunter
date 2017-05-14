@@ -1,0 +1,61 @@
+extends html-layout
+append styles
+    // Custom styles for this template
+    link(href='./css/dashboard.css', rel='stylesheet')
+
+block body
+    nav.navbar.navbar-inverse.navbar-fixed-top
+        .container-fluid
+            .navbar-header
+                button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+                    span.sr-only Toggle navigationn
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href='#') BugHunter
+            #navbar.navbar-collapse.collapse
+                ul.nav.navbar-nav.navbar-right
+                    li
+                        a(href='#') Dashboard
+                    li
+                        a(href='#') Settings
+                    li
+                        a(href='#') Profile
+                    li
+                        a(href='#') Help
+                form.navbar-form.navbar-right
+                    input.form-control(type='text', placeholder='Search...')
+    .container-fluid
+        .row
+            .col-sm-3.col-md-2.sidebar
+                ul.nav.nav-sidebar
+                    li.active
+                        a(href='#')
+                            | Overview
+                            span.sr-only (current)
+                    li
+                        a(href='#') Reports
+                    li
+                        a(href='#') Analytics
+                    li
+                        a(href='#') Export
+                ul.nav.nav-sidebar
+                    li
+                        a(href='') Nav item
+                    li
+                        a(href='') Nav item again
+                    li
+                        a(href='') One more nav
+                    li
+                        a(href='') Another nav item
+                    li
+                        a(href='') More navigation
+                ul.nav.nav-sidebar
+                    li
+                        a(href='') Nav item again
+                    li
+                        a(href='') One more nav
+                    li
+                        a(href='') Another nav item
+            .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+                block content
