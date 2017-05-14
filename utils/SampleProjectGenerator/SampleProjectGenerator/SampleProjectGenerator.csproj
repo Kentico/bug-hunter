@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FakeFileInfo.cs" />
     <Compile Include="CodeGenerators\BaseClassRules\BaseForBaseClassesCodeGenerator.cs" />
     <Compile Include="CodeGenerators\BaseClassRules\Implementation\ModuleRegistration.cs" />
     <Compile Include="CodeGenerators\BaseClassRules\Implementation\UiWebPartBase.cs" />
@@ -88,12 +89,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <ProjectReference Include="..\..\test\BugHunter.TestUtils\BugHunter.TestUtils.csproj">
-      <Project>{51413D47-6598-40A4-9BC7-91D88742B9DA}</Project>
-      <Name>BugHunter.TestUtils</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

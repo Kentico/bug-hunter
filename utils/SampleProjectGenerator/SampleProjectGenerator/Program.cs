@@ -23,7 +23,7 @@ namespace SampleProjectGenerator
                 return;
             }
 
-            var sampleProjectFolder = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\..\thesis-sample-test-project\SampleProject"));
+            var sampleProjectFolder = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\..\..\thesis-sample-test-project\SampleProject"));
             if (!Directory.Exists(sampleProjectFolder))
             {
                 Console.WriteLine("This console app expects you have https://github.com/Suzii/thesis-sample-test-project cloned in a folder next to thesis-roslyn project");

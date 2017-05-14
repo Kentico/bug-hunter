@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using BugHunter.TestUtils.Helpers;
 
 namespace SampleProjectGenerator.CodeGenerators.BasicOperations
 {

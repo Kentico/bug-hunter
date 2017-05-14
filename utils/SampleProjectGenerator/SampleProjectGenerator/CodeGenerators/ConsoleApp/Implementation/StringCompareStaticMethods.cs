@@ -1,6 +1,4 @@
-﻿using BugHunter.TestUtils.Helpers;
-
-namespace SampleProjectGenerator.CodeGenerators.ConsoleApp.Implementation
+﻿namespace SampleProjectGenerator.CodeGenerators.ConsoleApp.Implementation
 {
     public class StringCompareStaticMethods : BaseConsoleAppClassCodeGenerator
     {

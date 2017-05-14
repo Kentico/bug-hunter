@@ -1,6 +1,4 @@
-﻿using BugHunter.TestUtils.Helpers;
-
-namespace SampleProjectGenerator.CodeGenerators.WebApp.Implementation
+﻿namespace SampleProjectGenerator.CodeGenerators.WebApp.Implementation
 {
     public class HttpSessionElementAccessGet : BaseWebAppClassCodeGenerator
     {

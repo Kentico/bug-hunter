@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Text;
-using BugHunter.TestUtils.Helpers;
 
 namespace SampleProjectGenerator.CodeGenerators.BaseClassRules
 {

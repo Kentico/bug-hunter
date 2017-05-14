@@ -1,6 +1,4 @@
-﻿using BugHunter.TestUtils.Helpers;
-
-namespace SampleProjectGenerator.CodeGenerators
+﻿namespace SampleProjectGenerator.CodeGenerators
 {
     /// <summary>
     /// Interface that all class code generators must implement

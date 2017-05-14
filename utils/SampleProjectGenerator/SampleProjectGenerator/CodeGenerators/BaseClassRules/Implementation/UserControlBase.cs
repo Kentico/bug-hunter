@@ -1,6 +1,4 @@
-﻿using BugHunter.TestUtils.Helpers;
-
-namespace SampleProjectGenerator.CodeGenerators.BaseClassRules.Implementation
+﻿namespace SampleProjectGenerator.CodeGenerators.BaseClassRules.Implementation
 {
     public class UserControlBase : BaseForBaseClassesCodeGenerator
     {
