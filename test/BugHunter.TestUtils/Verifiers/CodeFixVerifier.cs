@@ -75,6 +75,7 @@ namespace BugHunter.TestUtils.Verifiers
         /// <param name="fakeFileInfo">Fake file info generated files should have</param>
         private void VerifyFix(DiagnosticAnalyzer analyzer, CodeFixProvider codeFixProvider, string oldSource, string newSource, MetadataReference[] references, int? codeFixIndex, bool allowNewCompilerDiagnostics, FakeFileInfo fakeFileInfo)
         {
+            codeFixIndex = codeFixIndex ?? 0;
             var document = ProjectCompilation.CreateDocument(oldSource, references, fakeFileInfo);
             var compilerDiagnostics = ProjectCompilation.GetCompilerDiagnostics(document).ToList();
             Assert.IsEmpty(compilerDiagnostics.Where(diag => diag.Severity == DiagnosticSeverity.Warning || diag.Severity == DiagnosticSeverity.Error), "Unable to compile original source code.");
@@ -93,16 +94,10 @@ namespace BugHunter.TestUtils.Verifiers
                     break;
                 }
 
-                if (codeFixIndex != null)
-                {
-                    document = ApplyFix(document, actions.ElementAt((int)codeFixIndex));
-                    break;
-                }
-
-                document = ApplyFix(document, actions.ElementAt(0));
+                document = ApplyFix(document, actions.ElementAt(codeFixIndex.Value));
                 analyzerDiagnostics = AnalyzerExecution.GetSortedDiagnosticsFromDocuments(analyzer, new[] { document });
 
-                var newCompilerDiagnostics = GetNewDiagnostics(compilerDiagnostics, ProjectCompilation.GetCompilerDiagnostics(document)).ToArray();
+                var newCompilerDiagnostics = GetNewDiagnostics(compilerDiagnostics, ProjectCompilation.GetCompilerDiagnostics(document).ToArray()).ToArray();
 
                 // check if applying the code fix introduced any new compiler diagnostics
                 if (!allowNewCompilerDiagnostics && newCompilerDiagnostics.Any())

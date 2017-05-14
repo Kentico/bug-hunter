@@ -64,7 +64,7 @@ namespace SampleTestProject.CsSamples
         {{
             var whereCondition = new CMS.DataEngine.WhereCondition();
             whereCondition = whereCondition.{newMethodCall}(""columnName"", ""value"");
-            whereCondition = whereCondition?.{oldMethodCall}(""columnName"", ""value"");
+            whereCondition = whereCondition?.{newMethodCall}(""columnName"", ""value"");
         }}
     }}
 }}";

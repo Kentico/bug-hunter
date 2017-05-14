@@ -46,8 +46,8 @@ namespace BugHunter.Analyzers.CmsApiReplacementRules.CodeFixes
             }
 
             var usingNamespace = "CMS.Helpers";
-            var codeFix1 = SyntaxFactory.InvocationExpression(SyntaxFactory.ParseExpression("UrlHelper.Redirect"), invocationExpression.ArgumentList);
-            var codeFix2 = SyntaxFactory.InvocationExpression(SyntaxFactory.ParseExpression("UrlHelper.LocalRedirect"), invocationExpression.ArgumentList);
+            var codeFix1 = SyntaxFactory.InvocationExpression(SyntaxFactory.ParseExpression("URLHelper.Redirect"), invocationExpression.ArgumentList);
+            var codeFix2 = SyntaxFactory.InvocationExpression(SyntaxFactory.ParseExpression("URLHelper.LocalRedirect"), invocationExpression.ArgumentList);
 
             var message1 = $"{CodeFixMessagesProvider.GetReplaceWithMessage(codeFix2)} {CmsApiReplacementsResources.RedirectCodeFixLocal}";
             var message2 = $"{CodeFixMessagesProvider.GetReplaceWithMessage(codeFix2)} {CmsApiReplacementsResources.RedirectCodeFixExternal}";

@@ -59,7 +59,7 @@ namespace SampleTestProject.CsSamples
         public void SampleMethod()
         {{ 
             var r = {instance};
-            UrlHelper.{codeFix}(""url"");
+            URLHelper.{codeFix}(""url"");
         }}
     }}
 }}";
@@ -96,7 +96,7 @@ namespace SampleTestProject.CsSamples
     {{
         public void SampleMethod()
         {{
-            UrlHelper.{codeFix}(""url"");
+            URLHelper.{codeFix}(""url"");
         }}
     }}
 }}";

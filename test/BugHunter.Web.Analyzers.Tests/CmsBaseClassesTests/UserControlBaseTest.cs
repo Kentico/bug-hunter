@@ -25,7 +25,9 @@ namespace BugHunter.Web.Analyzers.Tests.CmsBaseClassesTests
         };
 
         protected override MetadataReference[] AdditionalReferences
-            => ReferencesHelper.CMSBasicReferences.Union(new[] { ReferencesHelper.CMSBaseWebUI, ReferencesHelper.SystemWebReference, ReferencesHelper.SystemWebUIReference }).ToArray();
+            => ReferencesHelper.CMSBasicReferences
+                .Union(ReferencesHelper.GetReferencesFor(typeof(CMS.UIControls.CMSUserControl)))
+                .Union(new[] { ReferencesHelper.CMSBaseWebUI, ReferencesHelper.SystemWebReference, ReferencesHelper.SystemWebUIReference }).ToArray();
 
         [Test]
         public void EmptyInput_NoDiagnostic()
