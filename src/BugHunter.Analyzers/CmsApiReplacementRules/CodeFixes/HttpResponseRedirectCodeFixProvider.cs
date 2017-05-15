@@ -16,6 +16,10 @@ using Microsoft.CodeAnalysis.CSharp;
 
 namespace BugHunter.Analyzers.CmsApiReplacementRules.CodeFixes
 {
+    /// <summary>
+    /// Replaces diagnosed syntax node from <see cref="HttpResponseRedirectAnalyzer"/> with a call to <c>CMS.Helpers.URLHelper.Redirect()</c>
+    /// or <c>CMS.Helpers.URLHelper.LocalRedirect()</c>
+    /// </summary>
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(HttpResponseRedirectCodeFixProvider)), Shared]
     public class HttpResponseRedirectCodeFixProvider : CodeFixProvider
     {

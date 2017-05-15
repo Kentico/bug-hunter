@@ -17,6 +17,10 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace BugHunter.Analyzers.CmsApiReplacementRules.CodeFixes
 {
+    /// <summary>
+    /// Replaces diagnosed syntax node from <see cref="ClientScriptMethodsAnalyzer"/> with a call to <c>CMS.Base.Web.UI.ScriptHelper</c>
+    /// class, invoking a method with same name as the diagnosed invocation. Code fix is only suggested if the class derives from <c>System.Web.UI.Control</c>
+    /// </summary>
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(ClientScriptMethodsCodeFixProvider)), Shared]
     public class ClientScriptMethodsCodeFixProvider : CodeFixProvider
     {

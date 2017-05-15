@@ -17,8 +17,9 @@ using Microsoft.CodeAnalysis.CSharp;
 namespace BugHunter.Analyzers.StringAndCultureRules.CodeFixes
 {
     /// <summary>
-    /// Fixes string.Compare("a", "b") into overload with StringComparison argument
+    /// Adds <see cref="System.StringComparison"/> argument to the method invocation diagnosed by <see cref="StringCompareStaticMethodAnalyzer"/>
     /// </summary>
+    /// <remarks>Respects the ignore case argument if present</remarks>
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(StringCompareStaticMethodCodeFixProvider)), Shared]
     public class StringCompareStaticMethodCodeFixProvider : CodeFixProvider
     {

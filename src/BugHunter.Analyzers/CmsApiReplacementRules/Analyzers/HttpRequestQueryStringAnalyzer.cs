@@ -10,6 +10,9 @@ using Microsoft.CodeAnalysis.Diagnostics;
 
 namespace BugHunter.Analyzers.CmsApiReplacementRules.Analyzers
 {
+    /// <summary>
+    /// Access to <c>QueryString</c> property of <c>System.Web.HttpRequest</c> or <c>System.Web.HttpRequestBase</c>
+    /// </summary>
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class HttpRequestQueryStringAnalyzer : DiagnosticAnalyzer
     {

@@ -15,6 +15,10 @@ using Microsoft.CodeAnalysis.CodeFixes;
 
 namespace BugHunter.Analyzers.StringAndCultureRules.CodeFixes
 {
+    /// <summary>
+    /// Adds <see cref="System.StringComparison"/> argument to the method invocation diagnosed by one of
+    /// <see cref="StringEqualsMethodAnalyzer"/>, <see cref="StringStartAndEndsWithMethodsAnalyzer"/>, or <see cref="StringIndexOfMethodsAnalyzer"/>
+    /// </summary>
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(StringComparisonMethodsWithModifierCodeFixProvider)), Shared]
     public class StringComparisonMethodsWithModifierCodeFixProvider : CodeFixProvider
     {

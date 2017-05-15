@@ -13,6 +13,10 @@ using Microsoft.CodeAnalysis.Diagnostics;
 
 namespace BugHunter.Web.Analyzers.CmsApiGuidelinesRules.Analyzers
 {
+    /// <summary>
+    /// Method <c>CMS.DataEngine.ConnectionHelper.ExecuteQuery</c> is invoked from presentation layer
+    /// (one of <c>.aspx.cs</c>, <c>.ascx.cs</c>, <c>.ashx.cs</c> or <c>.mester.cs</c>)
+    /// </summary>
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class ConnectionHelperExecuteQueryAnalyzer : DiagnosticAnalyzer
     {

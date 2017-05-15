@@ -16,6 +16,10 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace BugHunter.Analyzers.AbstractionOverImplementation.CodeFixes
 {
+    /// <summary>
+    /// Replaces usages of <c>CMS.Search.Lucene3.LuceneSearchDocument</c> diagnosed by <see cref="LuceneSearchDocumentAnalyzer"/>
+    /// with <c>CMS.DataEngine.ISearchDocument</c> interface
+    /// </summary>
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(LuceneSearchDocumentCodeFixProvider)), Shared]
     public class LuceneSearchDocumentCodeFixProvider : CodeFixProvider
     {

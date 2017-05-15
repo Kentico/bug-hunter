@@ -16,6 +16,10 @@ using Microsoft.CodeAnalysis.CSharp;
 
 namespace BugHunter.Web.Analyzers.CmsApiGuidelinesRules.CodeFixes
 {
+    /// <summary>
+    /// Replaces the invocations diagnosed by <see cref="ValidationHelperGetAnalyzer"/> by the method with same names + <c>Syntax</c> suffix,
+    /// sustaining only first two arguments (strips off any string comparison arguments)
+    /// </summary>
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(ValidationHelperGetCodeFixProvider)), Shared]
     public class ValidationHelperGetCodeFixProvider : CodeFixProvider
     {

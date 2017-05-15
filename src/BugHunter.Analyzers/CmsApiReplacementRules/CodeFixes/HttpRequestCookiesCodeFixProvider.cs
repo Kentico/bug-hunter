@@ -16,6 +16,9 @@ using Microsoft.CodeAnalysis.CSharp;
 
 namespace BugHunter.Analyzers.CmsApiReplacementRules.CodeFixes
 {
+    /// <summary>
+    /// Replaces diagnosed syntax node from <see cref="HttpRequestCookiesAnalyzer"/> with a call to <c>CMS.Helpers.CookieHelper.RequestCookies()</c>
+    /// </summary>
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(HttpRequestCookiesCodeFixProvider)), Shared]
     public class HttpRequestCookiesCodeFixProvider : CodeFixProvider
     {

@@ -17,6 +17,10 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace BugHunter.Analyzers.CmsApiGuidelinesRules.CodeFixes
 {
+    /// <summary>
+    /// Replaces invocation of methods diagnosed by <see cref="WhereLikeMethodAnalyzer"/> by one of <c>WhereContains</c>,
+    /// <c>WhereStartsWith</c>, <c>WhereEndswith</c> or their negated variants
+    /// </summary>
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(WhereLikeMethodCodeFixProvider)), Shared]
     public class WhereLikeMethodCodeFixProvider : CodeFixProvider
     {

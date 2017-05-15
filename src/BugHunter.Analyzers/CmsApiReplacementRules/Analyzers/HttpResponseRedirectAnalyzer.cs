@@ -10,6 +10,9 @@ using Microsoft.CodeAnalysis.Diagnostics;
 
 namespace BugHunter.Analyzers.CmsApiReplacementRules.Analyzers
 {
+    /// <summary>
+    /// Access to <c>Redirect</c> method of <c>System.Web.HttpResponse</c> or <c>System.Web.HttpResponseBase</c>
+    /// </summary>
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class HttpResponseRedirectAnalyzer : DiagnosticAnalyzer
     {

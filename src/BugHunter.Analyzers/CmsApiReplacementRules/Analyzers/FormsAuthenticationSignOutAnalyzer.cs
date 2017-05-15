@@ -11,7 +11,7 @@ using Microsoft.CodeAnalysis.Diagnostics;
 namespace BugHunter.Analyzers.CmsApiReplacementRules.Analyzers
 {
     /// <summary>
-    /// Searches for usages of <c>System.Web.Security.FormsAuthentication</c> and their access to SignOut member
+    /// Access to <c>SignOut</c> method of <c>System.Web.Security.FormsAuthentication</c>
     /// </summary>
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class FormsAuthenticationSignOutAnalyzer : DiagnosticAnalyzer

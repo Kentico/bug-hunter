@@ -11,7 +11,7 @@ using Microsoft.CodeAnalysis.Diagnostics;
 namespace BugHunter.Analyzers.CmsApiReplacementRules.Analyzers
 {
     /// <summary>
-    /// Searches for usage of <see cref="System.Web.HttpCookie"/> as properties of <see cref="System.Web.HttpRequest"/>
+    /// Access to <c>Cookies</c> property of <c>System.Web.HttpCookie</c> or <c>System.Web.HttpRequest</c>
     /// </summary>
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class HttpRequestCookiesAnalyzer : DiagnosticAnalyzer

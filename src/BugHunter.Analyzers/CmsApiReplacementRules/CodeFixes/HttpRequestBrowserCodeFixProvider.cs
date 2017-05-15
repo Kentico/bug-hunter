@@ -16,6 +16,9 @@ using Microsoft.CodeAnalysis.CSharp;
 
 namespace BugHunter.Analyzers.CmsApiReplacementRules.CodeFixes
 {
+    /// <summary>
+    /// Replaces diagnosed syntax node from <see cref="HttpRequestBrowserAnalyzer"/> with a call to <c>CMS.Helpers.BrowserHelper.GetBrowser()</c>
+    /// </summary>
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(HttpRequestBrowserCodeFixProvider)), Shared]
     public class HttpRequestBrowserCodeFixProvider : CodeFixProvider
     {

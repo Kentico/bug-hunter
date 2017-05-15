@@ -10,6 +10,10 @@ using Microsoft.CodeAnalysis.Diagnostics;
 
 namespace BugHunter.Analyzers.CmsApiReplacementRules.Analyzers
 {
+    /// <summary>
+    /// Access to one of <c>RegisterArrayDeclaration</c>, <c>RegisterClientScriptBlock</c>, <c>RegisterClientScriptInclude</c>, or <c>RegisterStartupScript</c>
+    /// methods of <c>System.Web.UI.ClientScriptManager</c>
+    /// </summary>
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class ClientScriptMethodsAnalyzer : DiagnosticAnalyzer
     {

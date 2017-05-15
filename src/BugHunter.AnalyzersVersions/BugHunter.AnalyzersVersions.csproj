@@ -35,6 +35,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>BugHunter.AnalyzersVersions.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\Release\BugHunter.AnalyzersVersions.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <None Include="BugHunter.AnalyzersVersions.ruleset" />

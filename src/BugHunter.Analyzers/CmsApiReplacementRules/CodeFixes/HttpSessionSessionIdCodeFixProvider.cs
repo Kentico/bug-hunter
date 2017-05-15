@@ -16,6 +16,9 @@ using Microsoft.CodeAnalysis.CSharp;
 
 namespace BugHunter.Analyzers.CmsApiReplacementRules.CodeFixes
 {
+    /// <summary>
+    /// Replaces diagnosed syntax node from <see cref="HttpSessionSessionIdAnalyzer"/> with a call to <c>CMS.Helpers.SessionHelper.GetSessionID()</c>
+    /// </summary>
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(HttpSessionSessionIdCodeFixProvider)), Shared]
     public class HttpSessionSessionIdCodeFixProvider : CodeFixProvider
     {

@@ -10,7 +10,8 @@ using Microsoft.CodeAnalysis.Diagnostics;
 namespace BugHunter.Analyzers.StringAndCultureRules.Analyzers
 {
     /// <summary>
-    /// Searches for usages of 'StartsWith()' and 'EndsWith()' methods called on strings and reports their usage when no overload with StringComparison argument is used
+    /// The <c>String.StartsWith</c> or <c>String.EndsWith</c> method is invoked without specifying <see cref="System.StringComparison"/>
+    /// nor <see cref="System.Globalization.CultureInfo"/> argument
     /// </summary>
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class StringStartAndEndsWithMethodsAnalyzer : BaseStringMethodsAnalyzer

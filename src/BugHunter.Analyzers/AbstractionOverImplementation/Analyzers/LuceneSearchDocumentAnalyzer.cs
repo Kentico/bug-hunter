@@ -14,6 +14,9 @@ using Microsoft.CodeAnalysis.Diagnostics;
 
 namespace BugHunter.Analyzers.AbstractionOverImplementation.Analyzers
 {
+    /// <summary>
+    /// Usages of <c>CMS.Search.Lucene3.LuceneSearchDocument</c> that are not part of object creation syntax
+    /// </summary>
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class LuceneSearchDocumentAnalyzer : DiagnosticAnalyzer
     {

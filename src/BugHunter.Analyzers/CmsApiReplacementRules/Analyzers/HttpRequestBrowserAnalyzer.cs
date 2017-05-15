@@ -10,6 +10,9 @@ using Microsoft.CodeAnalysis.Diagnostics;
 
 namespace BugHunter.Analyzers.CmsApiReplacementRules.Analyzers
 {
+    /// <summary>
+    /// Access to <c>Browser</c> property of <c>System.Web.HttpBrowserCapabilities</c> or <c>System.Web.HttpBrowserCapabilitiesBase</c>
+    /// </summary>
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class HttpRequestBrowserAnalyzer : DiagnosticAnalyzer
     {

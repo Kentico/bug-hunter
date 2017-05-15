@@ -16,6 +16,9 @@ using Microsoft.CodeAnalysis.CSharp;
 
 namespace BugHunter.Analyzers.CmsApiReplacementRules.CodeFixes
 {
+    /// <summary>
+    /// Replaces diagnosed syntax node from <see cref="PageIsPostBackAnalyzer"/> with a call to <c>CMS.Helpers.RequestHelper.IsPostBack()</c>
+    /// </summary>
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(PageIsPostBackCodeFixProvider)), Shared]
     public class PageIsPostBackCodeFixProvider : CodeFixProvider
     {

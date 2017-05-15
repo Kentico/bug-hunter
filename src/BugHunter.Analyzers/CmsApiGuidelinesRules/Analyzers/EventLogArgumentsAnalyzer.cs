@@ -14,6 +14,9 @@ using Microsoft.CodeAnalysis.Diagnostics;
 
 namespace BugHunter.Analyzers.CmsApiGuidelinesRules.Analyzers
 {
+    /// <summary>
+    /// Explicit string passed as first argument of <c>CMS.EventLog.EventLogProvider.LogEvent</c> method
+    /// </summary>
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class EventLogArgumentsAnalyzer : DiagnosticAnalyzer
     {

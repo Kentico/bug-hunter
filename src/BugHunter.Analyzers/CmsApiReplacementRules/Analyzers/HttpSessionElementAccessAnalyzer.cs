@@ -12,6 +12,10 @@ using Microsoft.CodeAnalysis.Diagnostics;
 
 namespace BugHunter.Analyzers.CmsApiReplacementRules.Analyzers
 {
+    /// <summary>
+    /// Read or write element access to <c>Session</c> collection of <c>System.Web.SessionState.HttpSessionState</c>
+    /// or <c>System.Web.HttpSessionStateBase</c>
+    /// </summary>
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class HttpSessionElementAccessAnalyzer : DiagnosticAnalyzer
     {

@@ -11,7 +11,7 @@ using Microsoft.CodeAnalysis.Diagnostics;
 namespace BugHunter.Analyzers.CmsApiReplacementRules.Analyzers
 {
     /// <summary>
-    /// Searches for usages of <see cref="System.Web.UI.Page"/> and their access to IsCallback member
+    /// Access to <c>IsCallback</c> property of <c>System.Web.UI.Page</c>
     /// </summary>
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class PageIsCallbackAnalyzer : DiagnosticAnalyzer

@@ -15,6 +15,10 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace BugHunter.Analyzers.CmsBaseClassesRules.CodeFixes
 {
+    /// <summary>
+    /// Registers Module or ModuleEntry diagnosed by <see cref="ModuleRegistrationAnalyzer"/> by adding an assembly attribute <c>CMS.RegisterModule</c>
+    /// to the file, where the diagnosed class is declared
+    /// </summary>
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(ModuleRegistrationCodeFixProvider)), Shared]
     public class ModuleRegistrationCodeFixProvider : CodeFixProvider
     {

@@ -16,6 +16,9 @@ using Microsoft.CodeAnalysis.CSharp;
 
 namespace BugHunter.Analyzers.CmsApiReplacementRules.CodeFixes
 {
+    /// <summary>
+    /// Replaces diagnosed syntax node from <see cref="HttpRequestUrlAnalyzer"/> with a call to <c>CMS.Helpers.RequestContext.URL</c>
+    /// </summary>
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(HttpRequestUrlCodeFixProvider)), Shared]
     public class HttpRequestUrlCodeFixProvider : CodeFixProvider
     {

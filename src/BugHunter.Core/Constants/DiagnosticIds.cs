@@ -7,7 +7,7 @@ namespace BugHunter.Core.Constants
     /// Class defining the IDs for all diagnostic analyzers.
     /// </summary>
     /// <remarks>
-    /// No not move to spearate files/projects in order to ensure no duplicate identifiers are assigned
+    /// No not move to separate files/projects in order to ensure no duplicate identifiers are assigned
     /// </remarks>
 #pragma warning disable SA1124 // Do not use regions
     public static class DiagnosticIds

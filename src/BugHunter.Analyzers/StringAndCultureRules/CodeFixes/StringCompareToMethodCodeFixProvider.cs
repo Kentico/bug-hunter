@@ -18,7 +18,8 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 namespace BugHunter.Analyzers.StringAndCultureRules.CodeFixes
 {
     /// <summary>
-    /// Fixes "a".CompareTo("b") into string.Compare("a", "b", StringComparison.XY);
+    /// Adds <see cref="System.StringComparison"/> argument to the method invocation diagnosed by <see cref="StringCompareToMethodAnalyzer"/>
+    /// by converting the expression to static <c>String.Compare</c> method
     /// </summary>
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(StringCompareToMethodCodeFixProvider)), Shared]
     public class StringCompareToMethodCodeFixProvider : CodeFixProvider

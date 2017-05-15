@@ -13,6 +13,9 @@ using Microsoft.CodeAnalysis.Diagnostics;
 
 namespace BugHunter.Analyzers.CmsApiGuidelinesRules.Analyzers
 {
+    /// <summary>
+    /// Method <c>WhereLike</c> or <c>WhereNotLike</c> of <c>CMS.DataEngine.WhereConditionBase{TInfo}</c> is used
+    /// </summary>
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class WhereLikeMethodAnalyzer : DiagnosticAnalyzer
     {

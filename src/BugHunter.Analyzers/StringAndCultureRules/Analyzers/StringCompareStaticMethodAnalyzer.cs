@@ -10,7 +10,8 @@ using Microsoft.CodeAnalysis.Diagnostics;
 namespace BugHunter.Analyzers.StringAndCultureRules.Analyzers
 {
     /// <summary>
-    /// Searches for usages of 'Compare()' static methods called on strings and reports their usage when no overload with StringComparison or CultureInfo argument is used
+    /// The <c>String.Compare</c> static method is invoked without specifying <see cref="System.StringComparison"/>
+    /// nor <see cref="System.Globalization.CultureInfo"/> argument
     /// </summary>
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class StringCompareStaticMethodAnalyzer : BaseStringMethodsAnalyzer

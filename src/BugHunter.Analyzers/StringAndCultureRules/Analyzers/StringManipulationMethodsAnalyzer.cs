@@ -11,7 +11,7 @@ using Microsoft.CodeAnalysis.Diagnostics;
 namespace BugHunter.Analyzers.StringAndCultureRules.Analyzers
 {
     /// <summary>
-    /// Searches for usages of 'ToLower()' and 'ToUpper()' methods called on strings and reports their usage when no overload with StringComparison argument is used
+    /// The <c>String.ToLower</c> or <c>String.ToUpper</c> method is invoked without specifying <see cref="System.Globalization.CultureInfo"/> argument
     /// </summary>
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class StringManipulationMethodsAnalyzer : BaseStringMethodsAnalyzer

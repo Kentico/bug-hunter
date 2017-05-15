@@ -15,6 +15,9 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace BugHunter.Analyzers.CmsApiGuidelinesRules.CodeFixes
 {
+    /// <summary>
+    /// Replaces event type argument diagnosed by <see cref="EventLogArgumentsAnalyzer"/> with equivalent constant from <c>CMS.EventLog.EventType</c>
+    /// </summary>
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(EventLogArgumentsCodeFixProvider)), Shared]
     public class EventLogArgumentsCodeFixProvider : CodeFixProvider
     {

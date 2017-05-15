@@ -17,6 +17,10 @@ using Microsoft.CodeAnalysis.CodeFixes;
 
 namespace BugHunter.Web.Analyzers.CmsBaseClassesRules.CodeFixes
 {
+    /// <summary>
+    /// Makes the class diagnosed by <see cref="WebPartBaseAnalyzer"/> inherit from <c>CMS.UIControls.CMSAbstractUIWebpart</c> if it is located in UIWebParts folder;
+    /// otherwise it will inherit one of CMS Abstract WebParts
+    /// </summary>
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(WebPartBaseCodeFixProvider)), Shared]
     public class WebPartBaseCodeFixProvider : CodeFixProvider
     {

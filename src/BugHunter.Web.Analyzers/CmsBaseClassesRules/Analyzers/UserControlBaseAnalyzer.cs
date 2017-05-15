@@ -12,7 +12,7 @@ using Microsoft.CodeAnalysis.Diagnostics;
 namespace BugHunter.Web.Analyzers.CmsBaseClassesRules.Analyzers
 {
     /// <summary>
-    /// Checks if User Control file inherits from right class.
+    /// A non-abstract class inherits directly from <c>System.Web.UI.UserControl</c>
     /// </summary>
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class UserControlBaseAnalyzer : DiagnosticAnalyzer

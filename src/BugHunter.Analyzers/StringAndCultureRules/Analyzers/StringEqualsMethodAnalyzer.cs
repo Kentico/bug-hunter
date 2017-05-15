@@ -10,7 +10,7 @@ using Microsoft.CodeAnalysis.Diagnostics;
 namespace BugHunter.Analyzers.StringAndCultureRules.Analyzers
 {
     /// <summary>
-    /// Searches for usages of 'Equals()' static methods called on strings and reports their usage when no overload with StringComparison or CultureInfo argument is used
+    /// The <c>String.Equals</c> instance or static method is invoked without specifying <see cref="System.StringComparison"/> argument
     /// </summary>
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class StringEqualsMethodAnalyzer : BaseStringMethodsAnalyzer

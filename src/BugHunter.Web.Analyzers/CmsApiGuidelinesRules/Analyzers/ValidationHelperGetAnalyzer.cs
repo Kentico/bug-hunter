@@ -14,7 +14,8 @@ using Microsoft.CodeAnalysis.Diagnostics;
 namespace BugHunter.Web.Analyzers.CmsApiGuidelinesRules.Analyzers
 {
     /// <summary>
-    /// Searches for usages of <c>CMS.Helpers.ValidationHelper</c> and their access to <c>GetDouble</c>, <c>GetDateTime</c> methods
+    /// One of methods <c>GetDouble</c>, <c>GetDecimal</c>, <c>GetDateTime</c> or <c>GetDate</c> of <c>CMS.Helpers.ValidationHelper</c> class
+    /// is invoked from a WebPart file
     /// </summary>
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class ValidationHelperGetAnalyzer : DiagnosticAnalyzer

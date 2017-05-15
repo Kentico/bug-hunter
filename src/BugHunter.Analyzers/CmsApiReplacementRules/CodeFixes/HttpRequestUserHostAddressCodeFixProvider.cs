@@ -16,6 +16,9 @@ using Microsoft.CodeAnalysis.CSharp;
 
 namespace BugHunter.Analyzers.CmsApiReplacementRules.CodeFixes
 {
+    /// <summary>
+    /// Replaces diagnosed syntax node from <see cref="HttpRequestUserHostAddressAnalyzer"/> with a call to <c>CMS.Helpers.RequestContext.UserHostAddress</c>
+    /// </summary>
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(HttpRequestUserHostAddressCodeFixProvider)), Shared]
     public class HttpRequestUserHostAddressCodeFixProvider : CodeFixProvider
     {

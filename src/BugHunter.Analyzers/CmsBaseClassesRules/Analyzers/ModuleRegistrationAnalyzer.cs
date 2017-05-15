@@ -16,7 +16,8 @@ using Microsoft.CodeAnalysis.Diagnostics;
 namespace BugHunter.Analyzers.CmsBaseClassesRules.Analyzers
 {
     /// <summary>
-    /// Checks Modules and ModuleEntries are registered in file where they are declared
+    /// The non-abstract <c>CMS.DataEngine.Module</c> or <c>CMS.Core.ModuleEntry</c> are not registered
+    /// by <c>CMS.RegisterModule</c> assembly attribute in the same file where they are declared
     /// </summary>
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class ModuleRegistrationAnalyzer : DiagnosticAnalyzer

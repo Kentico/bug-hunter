@@ -14,7 +14,7 @@ using Microsoft.CodeAnalysis.Diagnostics;
 namespace BugHunter.Web.Analyzers.CmsBaseClassesRules.Analyzers
 {
     /// <summary>
-    /// Checks if Web Part file inherits from right class.
+    /// A non-abstract class located in a WebPar or UIWebPart folder does not inherit from one of required base classes
     /// </summary>
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class WebPartBaseAnalyzer : DiagnosticAnalyzer

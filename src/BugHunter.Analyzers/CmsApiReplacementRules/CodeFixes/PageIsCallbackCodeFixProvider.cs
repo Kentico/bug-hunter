@@ -16,6 +16,9 @@ using Microsoft.CodeAnalysis.CSharp;
 
 namespace BugHunter.Analyzers.CmsApiReplacementRules.CodeFixes
 {
+    /// <summary>
+    /// Replaces diagnosed syntax node from <see cref="PageIsCallbackAnalyzer"/> with a call to <c>CMS.Helpers.RequestHelper.IsCallback()</c>
+    /// </summary>
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(PageIsCallbackCodeFixProvider)), Shared]
     public class PageIsCallbackCodeFixProvider : CodeFixProvider
     {

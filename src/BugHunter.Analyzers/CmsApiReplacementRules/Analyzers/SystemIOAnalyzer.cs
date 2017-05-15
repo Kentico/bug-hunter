@@ -16,9 +16,8 @@ using Microsoft.CodeAnalysis.Diagnostics;
 namespace BugHunter.Analyzers.CmsApiReplacementRules.Analyzers
 {
     /// <summary>
-    /// Searches for usages of <see cref="System.IO"/> and their access to anything other than <c>Exceptions</c> or <c>Stream</c>
-    ///
-    /// Version with callback on IdentifierName and using SemanticModelBrowser
+    /// Access to any members of <see cref="System.IO"/> namespace other than <see cref="System.IO.IOException"/>
+    /// or <see cref="System.IO.Stream"/> classes or their subclasses; or <see cref="System.IO.SeekOrigin"/> enumeration
     /// </summary>
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class SystemIOAnalyzer : DiagnosticAnalyzer

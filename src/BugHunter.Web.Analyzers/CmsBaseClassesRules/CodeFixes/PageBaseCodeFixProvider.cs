@@ -16,6 +16,10 @@ using Microsoft.CodeAnalysis.CodeFixes;
 
 namespace BugHunter.Web.Analyzers.CmsBaseClassesRules.CodeFixes
 {
+    /// <summary>
+    /// Makes the class diagnosed by <see cref="PageBaseAnalyzer"/> inherit from <c>CMS.UIControls.AbstractCMSPage</c>
+    /// or <c>CMS.UIControls.CMSUIPage</c>
+    /// </summary>
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(PageBaseCodeFixProvider)), Shared]
     public class PageBaseCodeFixProvider : CodeFixProvider
     {

@@ -16,6 +16,9 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace BugHunter.Analyzers.CmsApiReplacementRules.CodeFixes
 {
+    /// <summary>
+    /// Replaces write access to Session diagnosed by <see cref="HttpSessionElementAccessAnalyzer"/> with a call to <c>CMS.Helpers.SessionHelper.SetValue()</c>
+    /// </summary>
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(HttpSessionElementAccessSetCodeFixProvider)), Shared]
     public class HttpSessionElementAccessSetCodeFixProvider : CodeFixProvider
     {

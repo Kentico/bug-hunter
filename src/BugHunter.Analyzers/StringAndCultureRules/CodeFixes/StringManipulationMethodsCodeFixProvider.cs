@@ -16,6 +16,11 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace BugHunter.Analyzers.StringAndCultureRules.CodeFixes
 {
+    /// <summary>
+    /// Adds <see cref="System.Globalization.CultureInfo.CurrentCulture"/> argument to the method invocation diagnosed
+    /// by <see cref="StringCompareStaticMethodAnalyzer"/>; or replaces the method with Invariant version
+    /// </summary>
+    /// <remarks>Respects the ignore case argument if present</remarks>
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(StringManipulationMethodsCodeFixProvider)), Shared]
     public class StringManipulationMethodsCodeFixProvider : CodeFixProvider
     {

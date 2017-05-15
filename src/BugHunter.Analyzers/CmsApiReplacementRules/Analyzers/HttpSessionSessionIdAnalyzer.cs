@@ -11,11 +11,8 @@ using Microsoft.CodeAnalysis.Diagnostics;
 namespace BugHunter.Analyzers.CmsApiReplacementRules.Analyzers
 {
     /// <summary>
-    /// Searches for usages of <see cref="System.Web.HttpSessionStateBase"/> or <see cref="System.Web.SessionState.HttpSessionState"/> and their access to SessionID member
+    /// Access to <c>SessionID</c> property of <c>System.Web.SessionState.HttpSessionState</c> or <c>System.Web.HttpSessionStateBase</c>
     /// </summary>
-    /// <remarks>
-    /// Note that both classes need to be checked for access as they do not derive from one another and both can be used. For different scenarios check code in test file.
-    /// </remarks>
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class HttpSessionSessionIdAnalyzer : DiagnosticAnalyzer
     {

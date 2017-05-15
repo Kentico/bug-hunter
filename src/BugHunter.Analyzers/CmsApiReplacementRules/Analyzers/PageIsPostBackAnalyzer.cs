@@ -11,7 +11,7 @@ using Microsoft.CodeAnalysis.Diagnostics;
 namespace BugHunter.Analyzers.CmsApiReplacementRules.Analyzers
 {
     /// <summary>
-    /// Searches for usages of <see cref="System.Web.UI.Page"/> and their access to IsPostBack member
+    /// Access to <c>IsPostBack</c> property of <c>System.Web.UI.Page</c>
     /// </summary>
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class PageIsPostBackAnalyzer : DiagnosticAnalyzer

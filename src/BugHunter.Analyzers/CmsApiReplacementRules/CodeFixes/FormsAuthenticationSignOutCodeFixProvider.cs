@@ -15,6 +15,9 @@ using Microsoft.CodeAnalysis.CSharp;
 
 namespace BugHunter.Analyzers.CmsApiReplacementRules.CodeFixes
 {
+    /// <summary>
+    /// Replaces diagnosed syntax node from <see cref="FormsAuthenticationSignOutAnalyzer"/> with a call to <c>CMS.Membership.AuthenticationHelper.SignOut()</c>
+    /// </summary>
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(FormsAuthenticationSignOutCodeFixProvider)), Shared]
     public class FormsAuthenticationSignOutCodeFixProvider : CodeFixProvider
     {
