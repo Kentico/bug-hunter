@@ -11,7 +11,7 @@ namespace BugHunter.Core.Helpers.DiagnosticDescriptors
     /// </summary>
     public static class HelpLinkUriProvider
     {
-        private static readonly string OnlineDocumentationUrl = @"http://kentico.github.io/bug-hunter/{0}";
+        private static readonly string OnlineDocumentationUrl = @"http://kentico.github.io/bug-hunter/{0}.html";
         private static readonly Regex AnalyzerIdFormat = new Regex(@"^BH[0-9a-zA-Z]{4}$", RegexOptions.None);
 
         /// <summary>
