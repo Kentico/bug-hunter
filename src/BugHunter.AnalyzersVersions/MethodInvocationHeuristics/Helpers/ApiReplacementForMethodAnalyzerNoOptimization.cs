@@ -27,6 +27,13 @@ namespace BugHunter.AnalyzersVersions.MethodInvocationHeuristics.Helpers
             _methodInvocationAnalyzer = new MethodInvocationAnalyzerNoOptimization(config, new MethodInvocationDiagnosticFormatter());
         }
 
+        /// <summary>
+        /// Registers the analyzers on <paramref name="analysisContext" />
+        ///
+        /// Makes sure the analysis is run for all method invocations
+        /// and enables concurrent analysis execution and disables analysis of generated code
+        /// </summary>
+        /// <param name="analysisContext">Contex of the analysis to register the action on</param>
         public void RegisterAnalyzers(AnalysisContext analysisContext)
         {
             analysisContext.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.None);

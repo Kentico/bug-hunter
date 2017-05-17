@@ -22,7 +22,6 @@ namespace BugHunter.Core.DiagnosticsFormatting.Implementation
         /// <returns>Diagnostic created from descriptor for given named type symbol</returns>
         public Diagnostic CreateDiagnostic(DiagnosticDescriptor descriptor, INamedTypeSymbol namedTypeSymbol)
         {
-            // TODO
             var location = namedTypeSymbol.Locations.FirstOrDefault();
             var diagnostic = Diagnostic.Create(descriptor, location, namedTypeSymbol.Name);
 

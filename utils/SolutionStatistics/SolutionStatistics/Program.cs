@@ -37,6 +37,7 @@ namespace SolutionStatistics
             var onlyProjectsWithInstalledAnalyzer = args.Contains(OnlyProjectsWithInstalledAnalyzerFlag);
             var stopwatch = Stopwatch.StartNew();
 
+            Console.WriteLine($@"Loading solution {CMSSolutionPath}");
             var workspace = MSBuildWorkspace.Create();
             var solution = await workspace.OpenSolutionAsync(CMSSolutionPath, cancellationToken).ConfigureAwait(false);
 
@@ -57,12 +58,6 @@ namespace SolutionStatistics
             StatisticsHelper.PrintStatistics(statistics);
 
             Console.WriteLine($@"Stats computed in {stopwatch.Elapsed:mm\:ss\.ff}.");
-            Console.WriteLine("Press ESC to continue...");
-
-            while (Console.ReadKey().Key != ConsoleKey.Escape)
-            {
-                // do nohing
-            }
         }
     }
 }
