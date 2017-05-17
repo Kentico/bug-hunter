@@ -2,8 +2,7 @@
 This simple guide explains how to run MSBuild with so that the compiler outputs the statistics about analyzers' execution times.
 
 As per https://github.com/dotnet/roslyn/blob/master/docs/analyzers/Report%20Analyzer%20Format.md, it should be possible to run the compiler (csc.exr) with `/ReportAnalyzer` switch and all the stats should be there. 
-Not so easy for `MSBuild`, though... 
-The MSBuild internally uses the csc.ex, therefore, it should be (somehow) possible to switch it on. 
+The MSBuild internally uses the csc.exe, therefore, it should be (somehow) possible to switch it on. 
 As it turns out, the MSBuild official documentation (https://msdn.microsoft.com/en-us/library/ms164311.aspx) does not contain any information on that matter.
 
 **TL;DR;**
