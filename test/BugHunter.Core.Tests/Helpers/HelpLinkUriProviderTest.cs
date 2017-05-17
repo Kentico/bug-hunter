@@ -35,7 +35,7 @@ namespace BugHunter.Core.Tests.Helpers
         [TestCase("BHABCD")]
         public void CorrectId_GetHelpLink_ReturnsCorrectUri(string analyzerId)
         {
-            var expected = $"http://kentico.github.io/bug-hunter/{analyzerId}";
+            var expected = $"http://kentico.github.io/bug-hunter/{analyzerId}.html";
             var actual = HelpLinkUriProvider.GetHelpLink(analyzerId);
             Assert.AreEqual(expected, actual);
         }
