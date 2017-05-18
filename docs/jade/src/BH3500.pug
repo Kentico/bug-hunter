@@ -1,0 +1,23 @@
+extends page-layout
+include mixins/analyzer-info
+
+block content
+
+    h1.page-header BH3500 - WebPartBase
+    .row
+        .col-sm-12
+            p.lead
+                | A non-abstract class located in a WebPart folder does not inherit from one of required base classes
+
+            +analyzer-info('BH3500', 'WebPartBaseAnalyzer')(
+            category='CmsBaseClasses')
+
+    .row
+        .col-sm-12
+            h2 Motivation
+            p TODO
+
+    .row
+        .col-sm-12
+            h2 Code Fixes
+            p TODO

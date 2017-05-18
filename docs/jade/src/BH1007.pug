@@ -1,0 +1,23 @@
+extends page-layout
+include mixins/analyzer-info
+
+block content
+
+    h1.page-header BH1007 - HttpRequestBrowser
+    .row
+        .col-sm-12
+            p.lead
+                | Access to <code>Browser</code> property of <code>System.Web.HttpBrowserCapabilities</code> or <code>System.Web.HttpBrowserCapabilitiesBase</code>
+
+            +analyzer-info('BH1007', 'HttpRequestBrowserAnalyzer')
+
+
+    .row
+        .col-sm-12
+            h2 Motivation
+            p TODO
+
+    .row
+        .col-sm-12
+            h2 Code Fixes
+            p TODO

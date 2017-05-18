@@ -1,0 +1,25 @@
+extends page-layout
+include mixins/analyzer-info
+
+block content
+
+    h1.page-header BH0000 - LuceneSearchDocument
+    .row
+        .col-sm-12
+            p.lead
+                | Usages of&nbsp;
+                code CMS.Search.Lucene3.LuceneSearchDocument
+                |&nbsp;that are not part of object creation syntax.
+
+            +analyzer-info('BH0000', 'LuceneSearchDocumentAnalyzer')(category='AbstractionOverImplementation')
+
+
+    .row
+        .col-sm-12
+            h2 Motivation
+            p TODO
+
+    .row
+        .col-sm-12
+            h2 Code Fixes
+            p TODO

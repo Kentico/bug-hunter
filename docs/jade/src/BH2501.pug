@@ -1,0 +1,25 @@
+extends page-layout
+include mixins/analyzer-info
+
+block content
+
+    h1.page-header BH2501 - ConnectionHelperExecuteQuery
+    .row
+        .col-sm-12
+            p.lead
+                | Method <code>CMS.DataEngine.ConnectionHelper.ExecuteQuery</code> is invoked from presentation layer (one of <code>.aspx.cs</code>, <code>.ascx.cs</code>, <code>.ashx.cs</code> or <code>.mester.cs</code>)
+
+            +analyzer-info('BH2501', 'ConnectionHelperExecuteQueryAnalyzer')(
+                severity='Info',
+                category='CmsApiGuidelines',
+                package='BugHunter.Web.Analyzers')
+
+    .row
+        .col-sm-12
+            h2 Motivation
+            p TODO
+
+    .row
+        .col-sm-12
+            h2 Code Fixes
+            p TODO

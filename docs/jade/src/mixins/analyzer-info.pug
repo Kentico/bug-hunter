@@ -1,0 +1,18 @@
+mixin analyzer-info(id, name)
+    - var category = attributes.category || 'CmsApiReplacements';
+    - var severity = attributes.severity || 'Warning';
+    - var package = attributes.package || 'BugHunter.Analyzers';
+    .table-responsive
+        table.table
+            tr
+                td
+                    b Category
+                td= category
+            tr
+                td
+                    b Severity
+                td= severity
+            tr
+                td
+                    b Package
+                td= package

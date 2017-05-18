@@ -1,5 +1,29 @@
 extends html-layout
+append styles
+    //	!-- Custom styles for this template --
+    link(href="./css/cover.css", rel="stylesheet")
 
 block body
-    .row Page not found :(
-    .row Go back to homepage a(href="./index.pug") Home
+    .site-wrapper
+        .site-wrapper-inner
+            .cover-container
+                .masthead.clearfix
+                    .inner
+                        h3.masthead-brand BugHunter
+                        nav
+                            ul.nav.masthead-nav
+                                li.active
+                                    a(href="index.html") Home
+                                li
+                                    a(href="http://github.com/Kentico/bug-hunter") Repo
+                                li
+                                    a(href="http://github.com/Suzii") Contact
+                .inner.cover
+                    h1.cover-heading :(.
+                    p.lead Page not found.
+                    p.lead
+                    a(href="index.html", class="btn btn-lg btn-default") Home
+
+                .mastfoot
+                    .inner
+                        p BugHunter

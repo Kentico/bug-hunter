@@ -1,0 +1,23 @@
+extends page-layout
+include mixins/analyzer-info
+
+block content
+
+    h1.page-header BH3503 - UserControlBase
+    .row
+        .col-sm-12
+            p.lead
+                | A non-abstract class inherits directly from <code>System.Web.UI.UserControl</code>
+
+            +analyzer-info('BH3503', 'UserControlBaseAnalyzer')(
+            category='CmsBaseClasses')
+
+    .row
+        .col-sm-12
+            h2 Motivation
+            p TODO
+
+    .row
+        .col-sm-12
+            h2 Code Fixes
+            p TODO

@@ -1,0 +1,23 @@
+extends page-layout
+include mixins/analyzer-info
+
+block content
+
+    h1.page-header BH4005 - StringCompareStaticMethod
+    .row
+        .col-sm-12
+            p.lead
+                | The <code>String.Compare</code> static method is invoked without specifying <code>System.StringComparison</code> nor <code>System.Globalization.CultureInfo</code> argument
+
+            +analyzer-info('BH4005', 'StringCompareStaticMethodAnalyzer')(
+            category='StringAndCulture')
+
+    .row
+        .col-sm-12
+            h2 Motivation
+            p TODO
+
+    .row
+        .col-sm-12
+            h2 Code Fixes
+            p TODO

@@ -1,0 +1,23 @@
+extends page-layout
+include mixins/analyzer-info
+
+block content
+
+    h1.page-header BH1010 - PageIsCallback
+    .row
+        .col-sm-12
+            p.lead
+                | Access to <code>IsCallback</code> property of <code>System.Web.UI.Page</code>
+
+            +analyzer-info('BH1010', 'PageIsCallbackAnalyzer')
+
+
+    .row
+        .col-sm-12
+            h2 Motivation
+            p TODO
+
+    .row
+        .col-sm-12
+            h2 Code Fixes
+            p TODO

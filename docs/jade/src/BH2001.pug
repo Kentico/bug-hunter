@@ -1,0 +1,25 @@
+extends page-layout
+include mixins/analyzer-info
+
+block content
+
+    h1.page-header BH2001 - EventLogArguments
+    .row
+        .col-sm-12
+            p.lead
+                | Explicit string passed as first argument of <code>CMS.EventLog.EventLogProvider.LogEvent</code> method
+
+            +analyzer-info('BH2001', 'EventLogArgumentsAnalyzer')
+
+            p
+                | Limitations:
+                | Note that analysis has to be performed on syntax since it always is a string, but we want to achieve that not plain string is passed but rather a constant defined in <code>CMS.EventLog.EventType</code>.
+    .row
+        .col-sm-12
+            h2 Motivation
+            p TODO
+
+    .row
+        .col-sm-12
+            h2 Code Fixes
+            p TODO

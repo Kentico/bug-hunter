@@ -1,0 +1,23 @@
+extends page-layout
+include mixins/analyzer-info
+
+block content
+
+    h1.page-header BH4004 - StringIndexOfMethods
+    .row
+        .col-sm-12
+            p.lead
+                | The <code>String.IndexOf</code> or <code>String.LastindexOf</code> method is invoked without specifying <code>System.StringComparison</code> argument
+
+            +analyzer-info('BH4004', 'StringIndexOfMethodsAnalyzer')(
+            category='StringAndCulture')
+
+    .row
+        .col-sm-12
+            h2 Motivation
+            p TODO
+
+    .row
+        .col-sm-12
+            h2 Code Fixes
+            p TODO

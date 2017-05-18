@@ -1,0 +1,23 @@
+extends page-layout
+include mixins/analyzer-info
+
+block content
+
+    h1.page-header BH4000 - StringManipulationMethods
+    .row
+        .col-sm-12
+            p.lead
+                | The <code>String.ToLower</code> or <code>String.ToUpper</code> method is invoked without specifying <code>System.Globalization.CultureInfo</code> argument
+
+            +analyzer-info('BH4000', 'StringManipulationMethodsAnalyzer')(
+            category='StringAndCulture')
+
+    .row
+        .col-sm-12
+            h2 Motivation
+            p TODO
+
+    .row
+        .col-sm-12
+            h2 Code Fixes
+            p TODO

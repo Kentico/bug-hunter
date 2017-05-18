@@ -1,0 +1,23 @@
+extends page-layout
+include mixins/analyzer-info
+
+block content
+
+    h1.page-header BH1009 - HttpRequestQueryString
+    .row
+        .col-sm-12
+            p.lead
+                | Access to <code>QueryString</code> property of <code>System.Web.HttpRequest</code> or <code>System.Web.HttpRequestBase</code>
+
+            +analyzer-info('BH1009', 'HttpRequestQueryStringAnalyzer')
+
+
+    .row
+        .col-sm-12
+            h2 Motivation
+            p TODO
+
+    .row
+        .col-sm-12
+            h2 Code Fixes
+            p TODO

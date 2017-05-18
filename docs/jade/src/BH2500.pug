@@ -1,0 +1,24 @@
+extends page-layout
+include mixins/analyzer-info
+
+block content
+
+    h1.page-header BH2500 - ValidationHelperGet
+    .row
+        .col-sm-12
+            p.lead
+                | One of methods <code>GetDouble</code>, <code>GetDecimal</code>, <code>GetDateTime</code> or <code>GetDate</code> of <code>CMS.Helpers.ValidationHelper</code> class is invoked from a WebPart file
+
+            +analyzer-info('BH2500', 'ValidationHelperGetAnalyzer')(
+                category='CmsApiGuidelines',
+                package='BugHunter.Web.Analyzers')
+
+    .row
+        .col-sm-12
+            h2 Motivation
+            p TODO
+
+    .row
+        .col-sm-12
+            h2 Code Fixes
+            p TODO

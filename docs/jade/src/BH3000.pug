@@ -1,0 +1,23 @@
+extends page-layout
+include mixins/analyzer-info
+
+block content
+
+    h1.page-header BH3000 - ModuleRegistration
+    .row
+        .col-sm-12
+            p.lead
+                | The non-abstract <code>CMS.DataEngine.Module</code> or <code>CMS.Core.ModuleEntry</code> are not registered by <code>CMS.RegisterModule</code> assembly attribute in the same file where they are declared
+
+            +analyzer-info('BH3000', 'ModuleRegistrationAnalyzer')(
+            category='CmsBaseClasses')
+
+    .row
+        .col-sm-12
+            h2 Motivation
+            p TODO
+
+    .row
+        .col-sm-12
+            h2 Code Fixes
+            p TODO

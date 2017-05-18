@@ -1,0 +1,23 @@
+extends page-layout
+include mixins/analyzer-info
+
+block content
+
+    h1.page-header BH1012 - FormsAuthenticationSignOut
+    .row
+        .col-sm-12
+            p.lead
+                | Access to <code>SignOut</code> method of <code>System.Web.Security.FormsAuthentication</code>
+
+            +analyzer-info('BH1012', 'FormsAuthenticationSignOutAnalyzer')
+
+
+    .row
+        .col-sm-12
+            h2 Motivation
+            p TODO
+
+    .row
+        .col-sm-12
+            h2 Code Fixes
+            p TODO

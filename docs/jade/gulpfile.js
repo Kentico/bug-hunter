@@ -3,9 +3,9 @@ var gulp = require('gulp'),
     pug = require('gulp-pug');
 
 gulp.task('build-pug', function () {
-    return gulp.src(['src/**/*.pug'])
+    return gulp.src(['src/index.pug', 'src/BH*.pug', 'src/404.pug'])
         .pipe(pug()) // pipe to pug plugin
-        .pipe(gulp.dest('build')); // tell gulp our output folder
+        .pipe(gulp.dest('../')); // tell gulp our output folder
 });
 
 gulp.task('watch', function () {

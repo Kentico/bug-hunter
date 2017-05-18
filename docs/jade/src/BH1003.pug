@@ -1,0 +1,23 @@
+extends page-layout
+include mixins/analyzer-info
+
+block content
+
+    h1.page-header BH1003 - HttpRequestCookies
+    .row
+        .col-sm-12
+            p.lead
+                | Access to <code>Cookies</code> property of <code>System.Web.HttpCookie</code> or <code>System.Web.HttpRequest</code>
+
+            +analyzer-info('BH1002', 'HttpRequestCookiesAnalyzer')
+
+
+    .row
+        .col-sm-12
+            h2 Motivation
+            p TODO
+
+    .row
+        .col-sm-12
+            h2 Code Fixes
+            p TODO

@@ -1,0 +1,23 @@
+extends page-layout
+include mixins/analyzer-info
+
+block content
+
+    h1.page-header BH1014 - SystemIO
+    .row
+        .col-sm-12
+            p.lead
+                | Access to any members of <code>System.IO</code> namespace other than <code>System.IO.IOException</code> or <code>System.IO.Stream</code> classes or their subclasses; or <code>System.IO.SeekOrigin</code> enumeration
+
+            +analyzer-info('BH1014', 'SystemIOAnalyzer')
+
+
+    .row
+        .col-sm-12
+            h2 Motivation
+            p TODO
+
+    .row
+        .col-sm-12
+            h2 Code Fixes
+            p TODO
