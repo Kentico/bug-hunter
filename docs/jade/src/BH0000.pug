@@ -14,12 +14,25 @@ block content
             +analyzer-info('BH0000', 'LuceneSearchDocumentAnalyzer')(category='AbstractionOverImplementation')
 
 
-    .row
-        .col-sm-12
-            h2 Motivation
-            p TODO
+    //.row
+    //    .col-sm-12
+    //        h2 Motivation
+    //        p TBD
 
     .row
         .col-sm-12
             h2 Code Fixes
-            p TODO
+            p A code fix will be presented.
+
+            p Before:
+            pre
+                | using CMS.Search.Lucene3;
+                | ...
+                | LuceneSearchDocument document = new LuceneSearchDocument();
+
+            p After:
+            pre
+                | using CMS.Search.Lucene3;
+                | using CMS.DataEngine;
+                | ...
+                | ISearchDocument document = new LuceneSearchDocument();
