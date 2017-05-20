@@ -20,4 +20,37 @@ block content
     .row
         .col-sm-12
             h2 Code Fixes
-            p A code fix will be presented.
+            p
+                | Multiple code fixes will be presented, that add a comparison type as last argument. If the previous invocation specified the boolean <code>ignoreCase</code> attribute, this option will be respected in the code fix by only providing relevant string comparison options. If it was not specified, all options will be available.
+                | Either:
+                ul
+                    li
+                        code StringComparison.Ordinal
+                    li
+                        code StringComparison.CurrentCulture
+                    li
+                        code StringComparison.InvariantCulture
+
+                    | or (if <code>ignoreCase == true</code>)
+                ul
+                    li
+                        code StringComparison.OrdinalIgnoreCase
+                    li
+                        code StringComparison.CurrentCultureIgnoreCase
+                    li
+                        code StringComparison.InvariantCultureIgnoreCase
+
+            p Before:
+            pre
+                | string.Compare("a", "aa");
+                | string.Compare("a", "aa", true);
+                | string.Compare("a", 0, "aa", 0, 1, false);
+
+            p After (only first code fix shown):
+            pre
+                | using System;
+                | ...
+                | string.Compare("a", "aa", StringComparison.Ordinal);
+                | string.Compare("a", "aa", StringComparison.OrdinalIgnoreCase);
+                | string.Compare("a", 0, "aa", 0, 1, StringComparison.Ordinal);
+

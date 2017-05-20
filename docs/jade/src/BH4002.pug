@@ -20,4 +20,27 @@ block content
     .row
         .col-sm-12
             h2 Code Fixes
-            p A code fix will be presented.
+            p Multiple code fixes will be presented. Each code fix transforms the <code>CompareTo()</code> instance method invocation into static <code>string.Compare()</code> invocation with correct arguments, plus additional comparison type argument, which will be one of:
+            ul
+                li
+                    code StringComparison.Ordinal
+                li
+                    code StringComparison.OrdinalIgnoreCase
+                li
+                    code StringComparison.CurrentCulture
+                li
+                    code StringComparison.CurrentCultureIgnoreCase
+                li
+                    code StringComparison.InvariantCulture
+                li
+                    code StringComparison.InvariantCultureIgnoreCase
+
+            p Before:
+            pre
+                | var result = "BugHunter".CompareTo("bughunter");
+
+            p After (only first code fix shown):
+            pre
+                | using System;
+                | ...
+                | var result1 = string.Compare("BugHunter", "bughunter", StringComparison.Ordinal);

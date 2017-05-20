@@ -20,4 +20,22 @@ block content
     .row
         .col-sm-12
             h2 Code Fixes
-            p A code fix will be presented.
+            p Multiple code fixes will be presented, that replace the original invocation with its <code>Invariant</code> version, or add <code>CultureInfo.CurrentCulture</code> argument.
+
+            p Before:
+            pre
+                | var bugHunterLower = "BugHunter".ToLower();
+                | var bugHunterUpper = "BugHunter".ToUpper();
+
+            p After:
+            pre
+                | var bugHunterLower = "BugHunter".ToLowerInvariant();
+                | var bugHunterUpper = "BugHunter".ToUpperInvariant();
+                |
+                | // or
+                | using System.Globalization;
+                | ...
+                | var bugHunterLower = "BugHunter".ToLower(CultureInfo.CurrentCulture);
+                | var bugHunterUpper = "BugHunter".ToUpper(CultureInfo.CurrentCulture);
+
+

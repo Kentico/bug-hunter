@@ -20,4 +20,29 @@ block content
     .row
         .col-sm-12
             h2 Code Fixes
-            p A code fix will be presented.
+            p Multiple code fixes will be presented, that add a comparison type argument from one of these options:
+            ul
+                li
+                    code StringComparison.Ordinal
+                li
+                    code StringComparison.OrdinalIgnoreCase
+                li
+                    code StringComparison.CurrentCulture
+                li
+                    code StringComparison.CurrentCultureIgnoreCase
+                li
+                    code StringComparison.InvariantCulture
+                li
+                    code StringComparison.InvariantCultureIgnoreCase
+
+            p Before:
+            pre
+                | "BugHunter".Equals("bughunter");
+                | string.Equals("BugHunter", "bughunter");
+
+            p After (only first code fix shown):
+            pre
+                | using System;
+                | ...
+                | "BugHunter".Equals("bughunter", StringComparison.Ordinal);
+                | string.Equals("BugHunter", "bughunter", StringComparison.Ordinal);
