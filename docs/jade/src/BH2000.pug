@@ -20,4 +20,33 @@ block content
     .row
         .col-sm-12
             h2 Code Fixes
-            p A code fix will be presented.
+            p Multiple code fixes will be presented. Based on whether <code>WhereLike</code> or <code>WhereNotLike</code> method is diagnosed, one of:
+            ul
+                li
+                    code WhereContains
+                    | &nbsp;or&nbsp;
+                    code WhereNotContains
+                li
+                    code WhereStartsWith
+                    | &nbsp;or&nbsp;
+                    code WhereNotStartsWith
+                li
+                    code WhereEndsWith
+                    | &nbsp;or&nbsp;
+                    code WhereNotEndsWith
+
+            p Before:
+            pre
+                | using CMS.DataEngine;
+                | ...
+                | var whereCondition = whereCondition.WhereLike("columnName", "value");
+
+            p After:
+            pre
+                | using CMS.DataEngine;
+                | ...
+                | var whereCondition = whereCondition.WhereContains("columnName", "value");
+                | // or
+                | var whereCondition = whereCondition.WhereStartsWith("columnName", "value");
+                | // or
+                | var whereCondition = whereCondition.WhereEndsWith("columnName", "value");

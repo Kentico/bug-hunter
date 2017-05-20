@@ -1,5 +1,6 @@
 extends page-layout
 include mixins/analyzer-info
+include mixins/partial-class-remark
 
 block content
 
@@ -12,12 +13,63 @@ block content
             +analyzer-info('BH3500', 'WebPartBaseAnalyzer')(
             category='CmsBaseClasses')
 
-    //.row
-    //    .col-sm-12
-    //        h2 Motivation
-    //        p TBD
+            h3 Remarks
+            p
+                | Diagnostic will only be raised for a file which is located in WebParts folder (
+                code CMSWebParts\
+                | ), and does not derive from one of:
+                ul
+                    li
+                        code CMS.PortalEngine.Web.UI.CMSAbstractWebPart
+                    li
+                        code CMS.PortalEngine.Web.UI.CMSAbstractEditableWebPart
+                    li
+                        code CMS.PortalEngine.Web.UI.CMSAbstractLayoutWebPart
+                    li
+                        code CMS.PortalEngine.Web.UI.CMSAbstractWizardWebPart
+                    li
+                        code CMS.Ecommerce.Web.UI.CMSCheckoutWebPart
+
+            +partial-class-remark()
+
+            //.row
+            //    .col-sm-12
+            //        h2 Motivation
+            //        p TBD
 
     .row
         .col-sm-12
             h2 Code Fixes
-            p A code fix will be presented.
+            p
+                | Multiple code fixes will be presented, that replace the original base type (or adds new) with one of:
+                ul
+                    li
+                        code CMS.PortalEngine.Web.UI.CMSAbstractWebPart
+                    li
+                        code CMS.PortalEngine.Web.UI.CMSAbstractEditableWebPart
+                    li
+                        code CMS.PortalEngine.Web.UI.CMSAbstractLayoutWebPart
+                    li
+                        code CMS.PortalEngine.Web.UI.CMSAbstractWizardWebPart
+                    li
+                        code CMS.Ecommerce.Web.UI.CMSCheckoutWebPart
+
+            p Before:
+            pre
+                | using System.Web.UI.WebControls.WebParts;
+                |
+                | public class SomeWebPart : WebPart
+                | {
+                |     // methods
+                | }
+
+
+            p After:
+            pre
+                | using System.Web.UI.WebControls.WebParts;
+                | using CMS.PortalEngine.Web.UI;
+                |
+                | public class SomeWebPart : CMSAbstractWebPart
+                | {
+                |     // methods
+                | }

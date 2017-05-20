@@ -12,7 +12,7 @@ block content
             +analyzer-info('BH2001', 'EventLogArgumentsAnalyzer')
 
             p
-                | Limitations:
+                b Limitations:
                 | Note that analysis has to be performed on syntax since it always is a string, but we want to achieve that not plain string is passed but rather a constant defined in <code>CMS.EventLog.EventType</code>.
     //.row
     //    .col-sm-12
@@ -22,4 +22,34 @@ block content
     .row
         .col-sm-12
             h2 Code Fixes
-            p A code fix will be presented.
+            p A code fix will be presented, based on passed string constant:
+            ul
+                li For
+                    code "E"
+                    | :
+                    code CMS.EventLog.EventType.ERROR
+                li For
+                    code "W"
+                    | :
+                    code CMS.EventLog.EventType.WARNING
+                li For
+                    code "I"
+                    | :
+                    code CMS.EventLog.EventType.INFORMATION
+
+            p Before:
+            pre
+                | using CMS.EventLog;
+                | ...
+                | EventLogProvider.LogEvent("E", "source", "eventCode", "eventDescription");
+                | EventLogProvider.LogEvent("W", "source", "eventCode", "eventDescription");
+                | EventLogProvider.LogEvent("I", "source", "eventCode", "eventDescription");
+
+
+            p After:
+            pre
+                | using CMS.EventLog;
+                | ...
+                | EventLogProvider.LogEvent(EventType.ERROR, "source", "eventCode", "eventDescription");
+                | EventLogProvider.LogEvent(EventType.WARNING, "source", "eventCode", "eventDescription");
+                | EventLogProvider.LogEvent(EventType.INFORMATION, "source", "eventCode", "eventDescription");

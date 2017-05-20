@@ -1,5 +1,6 @@
 extends page-layout
 include mixins/analyzer-info
+include mixins/partial-class-remark
 
 block content
 
@@ -9,8 +10,18 @@ block content
             p.lead
                 | A non-abstract class located in a UIWebPart folder does not inherit from one of required base classes
 
-            +analyzer-info('BH3501', 'UIWebPartBase')(
+            +analyzer-info('BH3501', 'WebPartBaseAnalyzer')(
             category='CmsBaseClasses')
+
+            h3 Remarks
+            p
+                | Diagnostic will only be raised for a file which is located in UIWebParts folder (
+                code CMSModules\AdminControls\Controls\UIControls\
+                | ), and does not derive from&nbsp;
+                code CMS.UIControls.CMSAbstractUIWebpart
+                | &nbsp; class.
+
+            +partial-class-remark()
 
     //.row
     //    .col-sm-12
@@ -20,4 +31,29 @@ block content
     .row
         .col-sm-12
             h2 Code Fixes
-            p A code fix will be presented.
+            p
+                | A code fix will be presented, that replaces the original base type (or defines new) with&nbsp;
+                code CMS.UIControls.CMSAbstractUIWebpart
+                | .
+
+            p Before:
+                pre
+                    | using System.Web.UI.WebControls.WebParts;
+                    |
+                    | public class SomeUIWebPart : WebPart
+                    | {
+                    |     // methods
+                    | }
+
+
+                p After:
+                pre
+                    | using System.Web.UI.WebControls.WebParts;
+                    | using CMS.UIControls;
+                    |
+                    | public class SomeUIWebPart : CMSAbstractUIWebpart
+                    | {
+                    |     // methods
+                    | }
+
+

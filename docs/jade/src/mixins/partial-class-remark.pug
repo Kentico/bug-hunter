@@ -1,0 +1,6 @@
+mixin partial-class-remark()
+    p
+        | If the class is defined as a partial class, the diagnostic will only be raised once - for a file that is considered as a first location of the declared <code>ISymbol</code> by the compiler.
+        | In rare cases it might happen that the diagnostic will appear missing. This is due to a bug in Roslyn compiler. In these cases, only turn on the "build diagnostics" on Error List window. For more information, see&nbsp;
+        a(href="https://github.com/dotnet/roslyn/issues/8067") this issue
+        | &nbsp;on GitHub.

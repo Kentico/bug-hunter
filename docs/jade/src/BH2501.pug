@@ -14,6 +14,27 @@ block content
                 category='CmsApiGuidelines',
                 package='BugHunter.Web.Analyzers')
 
+
+            h3 Remarks
+            p Diagnostic will only be raised in files that are considered a part of presentation layer. These include:
+            ul
+                li
+                    | Pages (
+                    code .aspx.cs
+                    | )
+                li
+                    | User controls (
+                    code .ascx.cs
+                    | )
+                li
+                    | Handlers (
+                    code .ashx.cs
+                    | )
+                li
+                    | Master pages (
+                    code .master.cs
+                    | )
+
     //.row
     //    .col-sm-12
     //        h2 Motivation

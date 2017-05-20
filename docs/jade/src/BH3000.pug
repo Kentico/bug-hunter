@@ -20,4 +20,27 @@ block content
     .row
         .col-sm-12
             h2 Code Fixes
-            p A code fix will be presented.
+            p A code fix will be presented, that adds registers the Module or Module entry in the same class they are defined in. If the class is partial, the registration will be done in the first location of the symbol, as returned by the compiler.
+
+            p Before:
+            pre
+                | namespace WebApp.Modules
+                | {
+                |     public class ModuleRegistration : CMS.DataEngine.Module
+                |     {
+                |         // constructors and methods
+                |     }
+                | }
+
+            p After:
+            pre
+                | using CMS;
+                |
+                | [assembly: RegisterModule(typeof(WebApp.Modules.ModuleRegistration))]
+                | namespace WebApp.Modules
+                | {
+                |     public class ModuleRegistration : CMS.DataEngine.Module
+                |     {
+                |         // constructors and methods
+                |     }
+                | }

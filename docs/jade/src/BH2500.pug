@@ -13,6 +13,15 @@ block content
                 category='CmsApiGuidelines',
                 package='BugHunter.Web.Analyzers')
 
+            h3 Remarks
+            p Diagnostic will only be raised for a file which is located in WebParts folder. This means its relative path contains one of:
+            ul
+                li
+                    code CMSWebParts\
+                li
+                    code CMSModules\AdminControls\Controls\UIControls\
+
+
     //.row
     //    .col-sm-12
     //        h2 Motivation
@@ -22,3 +31,24 @@ block content
         .col-sm-12
             h2 Code Fixes
             p A code fix will be presented.
+
+            p If a culture is passed as a third argument (either string or a <code>CultureInfo</code> instance), this argument will be stripped off as part of the code fix.
+
+            p Before:
+                pre
+                    | using CMS.Helpers;
+                    | ...
+                    | var a = ValidationHelper.GetDouble("42", 42, "en-us");
+                    | var b = ValidationHelper.GetDateTime("", System.DateTime.MaxValue, "en-us");
+                    | var c = ValidationHelper.GetDate("", System.DateTime.MaxValue, "en-us");
+                    | var d = ValidationHelper.GetDecimal("", 0, "en-us");
+
+
+                p After:
+                pre
+                    | using CMS.Helpers;
+                    | ...
+                    | var a = ValidationHelper.GetDoubleSystem("42", 42);
+                    | var b = ValidationHelper.GetDateTimeSystem("", System.DateTime.MaxValue);
+                    | var c = ValidationHelper.GetDateSystem("", System.DateTime.MaxValue);
+                    | var d = ValidationHelper.GetDecimalSystem("", 0);

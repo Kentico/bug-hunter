@@ -1,5 +1,6 @@
 extends page-layout
 include mixins/analyzer-info
+include mixins/partial-class-remark
 
 block content
 
@@ -12,6 +13,9 @@ block content
             +analyzer-info('BH3502', 'PageBaseAnalyzer')(
             category='CmsBaseClasses')
 
+            h3 Remarks
+            +partial-class-remark()
+
     //.row
     //    .col-sm-12
     //        h2 Motivation
@@ -20,4 +24,29 @@ block content
     .row
         .col-sm-12
             h2 Code Fixes
-            p A code fix will be presented.
+            p Multiple code fixes will be presented, that replace the original base type with one of:
+            ul
+                li
+                    code CMS.UIControls.AbstractCMSPage
+                li
+                    code CMS.UIControls.CMSUIPage
+
+            p Before:
+                pre
+                    | using System.Web.UI;
+                    |
+                    | public class SomePage : Page
+                    | {
+                    |     // methods
+                    | }
+
+
+                p After:
+                pre
+                    | using System.Web.UI;
+                    | using CMS.UIControls;
+                    |
+                    | public class SomePage : AbstractCMSPage
+                    | {
+                    |     // methods
+                    | }
