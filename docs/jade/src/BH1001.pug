@@ -1,5 +1,6 @@
 extends page-layout
 include mixins/analyzer-info
+include mixins/conditional-access-code-fix-remark
 
 block content
 
@@ -19,4 +20,18 @@ block content
     .row
         .col-sm-12
             h2 Code Fixes
-            p A code fix will be presented.
+            p A code fix will be presented. The element access will be replaced with <code>SessionHelper.GetValue()</code> method.
+
+            p Before:
+            pre
+                | var session = System.Web.HttpContext.Current.Session;
+                | var value = session["key"];
+
+            p After:
+            pre
+                | using CMS.Helpers;
+                | ...
+                | var session = System.Web.HttpContext.Current.Session;
+                | var value = SessionHelper.GetValue("key");
+
+            +conditional-access-code-fix-remark()

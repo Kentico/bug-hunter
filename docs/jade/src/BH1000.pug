@@ -1,5 +1,6 @@
 extends page-layout
 include mixins/analyzer-info
+include mixins/conditional-access-code-fix-remark
 
 block content
 
@@ -20,5 +21,19 @@ block content
     .row
         .col-sm-12
             h2 Code Fixes
-            p A code fix will be presented.
+            p A code fix will be presented. The invocation will be replaced with <code>SessionHelper.GetSessionID()</code> method.
+
+            p Before:
+            pre
+                | var session = System.Web.HttpContext.Current.Session;
+                | var sessionId = session.SessionID;
+
+            p After:
+            pre
+                | using CMS.Helpers;
+                | ...
+                | var session = System.Web.HttpContext.Current.Session;
+                | var sessionId = SessionHelper.GetSessionID();
+
+            +conditional-access-code-fix-remark()
 

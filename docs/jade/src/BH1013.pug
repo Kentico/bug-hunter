@@ -1,5 +1,6 @@
 extends page-layout
 include mixins/analyzer-info
+include mixins/conditional-access-code-fix-remark
 
 block content
 
@@ -20,4 +21,40 @@ block content
     .row
         .col-sm-12
             h2 Code Fixes
-            p A code fix will be presented.
+            p If the enclosing class derives from any descendant of <code>System.Web.UI.Control</code>, a code fix will be presented. It will replace the direct registration calls to <code>ClientScript</code> instance, with equivalent calls to <code>ScriptHelper</code>.
+
+            p Before:
+            pre
+                | // the class must inherit UIControl in order for code fixes to work
+                | public class ClientScriptMethods : System.Web.UI.Control
+                | {
+                |     public void SampleMethod()
+                |     {
+                |         var clientScript = new System.Web.UI.Page().ClientScript;
+                |         clientScript.RegisterArrayDeclaration("arrayName", "arrayValue");
+                |         clientScript.RegisterArrayDeclaration("arrayName", "arrayValue");
+                |         clientScript.RegisterClientScriptBlock(typeof(object), "key", "script");
+                |         clientScript.RegisterClientScriptInclude(typeof(object), "key", "url");
+                |         clientScript.RegisterStartupScript(typeof(object), "key", "script");
+                |     }
+                | }
+
+            p After:
+            pre
+                | using CMS.Base.Web.UI;
+                |
+                | // the class must inherit UIControl in order for code fixes to work
+                | public class ClientScriptMethods : System.Web.UI.Control
+                | {
+                |     public void SampleMethod()
+                |     {
+                |         var clientScript = new System.Web.UI.Page().ClientScript;
+                |         ScriptHelper.RegisterArrayDeclaration(this, "arrayName", "arrayValue");
+                |         ScriptHelper.RegisterArrayDeclaration(this, "arrayName", "arrayValue");
+                |         ScriptHelper.RegisterClientScriptBlock(this, typeof(object), "key", "script");
+                |         ScriptHelper.RegisterClientScriptInclude(this, typeof(object), "key", "url");
+                |         ScriptHelper.RegisterStartupScript(this, typeof(object), "key", "script");
+                |     }
+                | }
+
+            +conditional-access-code-fix-remark()

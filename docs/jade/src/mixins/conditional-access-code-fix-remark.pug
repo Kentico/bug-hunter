@@ -1,0 +1,6 @@
+mixin conditional-access-code-fix-remark()
+    h3 Code fix limitations
+    p
+        | If the member access is conditional (<code>SyntaxKind.ConditionalAccessExpression</code>) or the invoked method has conditional access as its <code>Expression</code> property, <b>no code fix will be provided</b>. The logic would be very complicated and the fix would not have to be correct. Read more about codefixes on conditional accesses in&nbsp;
+        a(href="https://github.com/dotnet/roslyn/issues/3110") this issue
+        | &nbsp;on GitHub.

@@ -1,5 +1,6 @@
 extends page-layout
 include mixins/analyzer-info
+include mixins/conditional-access-code-fix-remark
 
 block content
 
@@ -19,4 +20,18 @@ block content
     .row
         .col-sm-12
             h2 Code Fixes
-            p A code fix will be presented.
+            p A code fix will be presented. The access will be replaced with <code>RequestHelper.IsCallback()</code> expression.
+
+            p Before:
+            pre
+                | var isCallback = Request.IsCallback;
+
+            p After:
+            pre
+                | using CMS.Helpers;
+                | ...
+                | var isCallback = RequestHelper.IsCallback();
+
+            +conditional-access-code-fix-remark()
+
+

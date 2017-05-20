@@ -1,5 +1,6 @@
 extends page-layout
 include mixins/analyzer-info
+include mixins/conditional-access-code-fix-remark
 
 block content
 
@@ -20,4 +21,17 @@ block content
     .row
         .col-sm-12
             h2 Code Fixes
-            p A code fix will be presented.
+            p A code fix will be presented. The access will be replaced with <code>BrowserHelper.GetBrowser()</code> expression.
+
+            p Before:
+            pre
+                | var browserName = Request.Browser.Browser;
+
+            p After:
+            pre
+                | using CMS.Helpers;
+                | ...
+                | var browserName = BrowserHelper.GetBrowser();
+
+            +conditional-access-code-fix-remark()
+

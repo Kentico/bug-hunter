@@ -35,6 +35,8 @@ block content
                 li
                     code StringComparison.InvariantCultureIgnoreCase
 
+            p Note, that if the expression is part of some nested member access, the code fix will not be provided, since this would require a variable to hold the value of the static method result.
+
             p Before:
             pre
                 | var result = "BugHunter".CompareTo("bughunter");

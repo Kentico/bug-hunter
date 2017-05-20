@@ -1,5 +1,6 @@
 extends page-layout
 include mixins/analyzer-info
+include mixins/conditional-access-code-fix-remark
 
 block content
 
@@ -20,4 +21,27 @@ block content
     .row
         .col-sm-12
             h2 Code Fixes
-            p A code fix will be presented.
+            p
+                | Multiple code fixes will be presented. The diagnosed nodes will be replaced with one of:
+                ul
+                    li
+                        code URLHelper.Redirect()
+                    li
+                        code URLHelper.LocalRedirect()
+
+
+            p Before:
+            pre
+                | Response.Redirect("https://google.com");
+
+            p After:
+            pre
+                | using CMS.Helpers;
+                | ...
+                | URLHelper.Redirect("https://google.com");
+                | // or
+                | URLHelper.LocalRedirect("https://google.com");
+
+            +conditional-access-code-fix-remark()
+
+

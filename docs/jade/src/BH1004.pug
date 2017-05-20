@@ -1,5 +1,6 @@
 extends page-layout
 include mixins/analyzer-info
+include mixins/conditional-access-code-fix-remark
 
 block content
 
@@ -19,4 +20,17 @@ block content
     .row
         .col-sm-12
             h2 Code Fixes
-            p A code fix will be presented.
+            p A code fix will be presented. The access will be replaced with <code>CookieHelper.ResponseCookies</code> expression.
+
+            p Before:
+            pre
+                | var cookies = Response.Cookies;
+
+            p After:
+            pre
+                | using CMS.Helpers;
+                | ...
+                | var cookies = CookieHelper.ResponseCookies;
+
+            +conditional-access-code-fix-remark()
+

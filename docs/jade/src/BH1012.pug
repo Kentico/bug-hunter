@@ -20,4 +20,19 @@ block content
     .row
         .col-sm-12
             h2 Code Fixes
-            p A code fix will be presented.
+            p A code fix will be presented. The access will be replaced with <code>AuthenticationHelper.SignOut()</code> expression.
+
+            p Before:
+            pre
+                | using System.Web.Security;
+                | ...
+                | FormsAuthentication.SignOut();
+
+            p After:
+            pre
+                | using System.Web.Security;
+                | using CMS.Membership;
+                | ...
+                | AuthenticationHelper.SignOut();
+
+
