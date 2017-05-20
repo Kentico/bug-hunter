@@ -2,6 +2,7 @@ extends html-layout
 append styles
     // Custom styles for this template
     link(href='./css/dashboard.css', rel='stylesheet')
+    link(href='./css/index.css', rel='stylesheet')
 
 block body
     nav.navbar.navbar-inverse.navbar-fixed-top
@@ -26,11 +27,13 @@ block body
     .container-fluid
         .row
             .col-sm-3.col-md-2.sidebar
-                ul.nav.nav-sidebar
+                ul.nav.nav-sidebar.analyzer-categories
+                    li.category-section Abstraction over Implementation
                     li
                         a(href='BH0000.html') BH0000
 
-                ul.nav.nav-sidebar
+                ul.nav.nav-sidebar.analyzer-categories
+                    li.category-section CMS API Replacements
                     li
                         a(href='BH1000.html') BH1000
                     li
@@ -62,7 +65,8 @@ block body
                     li
                         a(href='BH1014.html') BH1014
 
-                ul.nav.nav-sidebar
+                ul.nav.nav-sidebar.analyzer-categories
+                    li.category-section CMS API Guidelines
                     li
                         a(href='BH2000.html') BH2000
                     li
@@ -72,7 +76,8 @@ block body
                     li
                         a(href='BH2501.html') BH2501
 
-                ul.nav.nav-sidebar
+                ul.nav.nav-sidebar.analyzer-categories
+                    li.category-section CMS Base Classes
                     li
                         a(href='BH3000.html') BH3000
                     li
@@ -84,7 +89,8 @@ block body
                     li
                         a(href='BH3503.html') BH3503
 
-                ul.nav.nav-sidebar
+                ul.nav.nav-sidebar.analyzer-categories
+                    li.category-section String and Culture
                     li
                         a(href='BH4000.html') BH4000
                     li

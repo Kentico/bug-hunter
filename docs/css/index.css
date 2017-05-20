@@ -1,0 +1,15 @@
+ul.nav-sidebar.analyzer-categories > li > a {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.nav-sidebar > li.category-section {
+  padding: 5px 20px;
+  background: #337ab7;
+  color: #DDD;
+  display: block;
+}
+
+.nav-sidebar.analyzer-categories:first-child {
+  margin-top: -20px;
+}
