@@ -5,6 +5,7 @@ using System.Collections.Immutable;
 using BugHunter.Core.Constants;
 using BugHunter.Core.DiagnosticsFormatting;
 using BugHunter.Core.DiagnosticsFormatting.Implementation;
+using BugHunter.Core.Extensions;
 using BugHunter.Core.Helpers.DiagnosticDescriptors;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
@@ -50,8 +51,8 @@ namespace BugHunter.Web.Analyzers.CmsBaseClassesRules.Analyzers
                     return;
                 }
 
-                var diagnostic = DiagnosticFormatter.CreateDiagnostic(Rule, namedTypeSymbol);
-                symbolAnalysisContext.ReportDiagnostic(diagnostic);
+                var diagnostics = DiagnosticFormatter.CreateDiagnostics(Rule, namedTypeSymbol);
+                symbolAnalysisContext.ReportDiagnostics(diagnostics);
             }, SymbolKind.NamedType);
         }
     }

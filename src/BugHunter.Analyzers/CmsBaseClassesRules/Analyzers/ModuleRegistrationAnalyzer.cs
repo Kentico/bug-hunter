@@ -73,8 +73,8 @@ namespace BugHunter.Analyzers.CmsBaseClassesRules.Analyzers
                     return;
                 }
 
-                var diagnostic = diagnosticFormatter.CreateDiagnostic(Rule, namedTypeSymbol);
-                symbolAnalysisContext.ReportDiagnostic(diagnostic);
+                var diagnostics = diagnosticFormatter.CreateDiagnostics(Rule, namedTypeSymbol);
+                symbolAnalysisContext.ReportDiagnostics(diagnostics);
             }, SymbolKind.NamedType);
         }
 
