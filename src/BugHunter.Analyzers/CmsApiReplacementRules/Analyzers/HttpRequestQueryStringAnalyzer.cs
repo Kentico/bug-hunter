@@ -21,7 +21,7 @@ namespace BugHunter.Analyzers.CmsApiReplacementRules.Analyzers
         /// </summary>
         public const string DiagnosticId = DiagnosticIds.HttpRequestQueryString;
 
-        private static readonly DiagnosticDescriptor Rule = ApiReplacementRulesProvider.GetRule(DiagnosticId, "QueryString[]", "QueryHelper.Get<Type>()");
+        private static readonly DiagnosticDescriptor Rule = ApiReplacementRulesProvider.GetRule(DiagnosticId, "QueryString[]", "QueryHelper.Get<Type>()", DiagnosticSeverity.Info);
 
         private static readonly ApiReplacementConfig ApiReplacementConfig = new ApiReplacementConfig(
             Rule,
