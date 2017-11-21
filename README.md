@@ -1,3 +1,5 @@
+**🛈 This repository contains Kentico's internal code that is of no use to the general public. Please explore our [other repositories](https://github.com/Kentico).**
+
 # thesis-roslyn
 This repository contains BugHunter analyzers for Kentico CMS solution. They were implemented as part of the master thesis at Faculty of Informatics, Masaryk University.
 
@@ -11,7 +13,7 @@ This repository contains BugHunter analyzers for Kentico CMS solution. They were
 All the source codes are published under MIT licence.
 
 ## Versions
-The current version of analyzers is v1.0.1, compatible with Kentico.Livraries v10.0.13 and using Microsoft.CodeAnalysis v1.3.2.
+The current version of analyzers is v1.0.1, compatible with Kentico.Libraries v10.0.13 and using Microsoft.CodeAnalysis v1.3.2.
 Due to Roslyn version analyzers are only compatible with Visual Studio 2015 Update 3 and higher. Update to Microsoft.CodeAnalysis v2.0, which only works in Visual Studio 2017, is currently impossible due to company restrictions at Kentico (.NET framework and Visual Studio backward compatibility).
 
 ## NuGet Availability
