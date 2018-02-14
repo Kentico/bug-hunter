@@ -39,7 +39,8 @@ namespace BugHunter.Core.Tests.DiagnosticsFormatting
             var namedSymbol = semanticModel.GetDeclaredSymbol(classDeclaration);
 
             var expectedLocation = Location.Create(classDeclaration?.SyntaxTree, TextSpan.FromBounds(locationStart, locationStart + 9));
-            var diagnostic = _diagnosticFormatter.CreateDiagnostic(_rule, namedSymbol);
+            var diagnostic = _diagnosticFormatter.CreateDiagnostics(_rule, namedSymbol)
+                .Single();
 
             Assert.AreEqual(expectedLocation, diagnostic.Location);
             Assert.AreEqual("ClassName", diagnostic.GetMessage());

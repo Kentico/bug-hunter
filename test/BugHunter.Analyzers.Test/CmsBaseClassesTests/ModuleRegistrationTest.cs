@@ -165,10 +165,14 @@ namespace SampleTestProject.CsSamples
     {
     }
 }";
-            var expectedDiagnostic = GetDiagnosticResult("MyModule").WithLocation(6, 26);
+            var expectedDiagnostics = new[]
+            {
+                GetDiagnosticResult("MyModule").WithLocation(6, 26),
+                GetDiagnosticResult("MyModule").WithLocation(6, 26, "Test1.cs")
+            };
 
-            VerifyCSharpDiagnostic(new[] { test1, test2 }, expectedDiagnostic);
-            VerifyCSharpDiagnostic(new[] { test2, test1 }, expectedDiagnostic);
+            VerifyCSharpDiagnostic(new[] { test1, test2 }, expectedDiagnostics);
+            VerifyCSharpDiagnostic(new[] { test2, test1 }, expectedDiagnostics);
         }
 
         [Test]

@@ -91,8 +91,8 @@ namespace BugHunter.Web.Analyzers.CmsBaseClassesRules.Analyzers
                 return;
             }
 
-            var diagnostic = DiagnosticFormatter.CreateDiagnostic(ruleToBeUsed, namedTypeSymbol);
-            symbolAnalysisContext.ReportDiagnostic(diagnostic);
+            var diagnostics = DiagnosticFormatter.CreateDiagnostics(ruleToBeUsed, namedTypeSymbol);
+            symbolAnalysisContext.ReportDiagnostics(diagnostics);
         }
 
         private static bool InheritsFromOneOfRequiredTypes(string[] allowedBaseTypeNames, INamedTypeSymbol namedTypeSymbol)

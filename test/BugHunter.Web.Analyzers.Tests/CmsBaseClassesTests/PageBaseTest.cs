@@ -129,6 +129,26 @@ namespace SampleTestProject.CsSamples
             VerifyCSharpFix(test, expectedFix, codeFixNumber, false, PagesFakeFileInfo);
         }
 
+        [Test]
+        public void InputWithError_MultiplePartialClassDeclarations_SurfacesDiagnosticsForAllLocations()
+        {
+            var test = @"namespace SapleTestProject.CsSamples
+{
+    public partial class SampleClass
+    {
+    }
+
+    public partial class SampleClass : System.Web.UI.Page
+    {   
+    }
+
+}";
+            var firstDeclarationLocation = GetDiagnosticResult("SampleClass").WithLocation(3, 26, PagesFakeFileInfo);
+            var secondDeclarationLocation = GetDiagnosticResult("SampleClass").WithLocation(7, 26, PagesFakeFileInfo);
+
+            VerifyCSharpDiagnostic(test, PagesFakeFileInfo, firstDeclarationLocation, secondDeclarationLocation);
+        }
+
         private DiagnosticResult GetDiagnosticResult(params string[] messageArguments)
             => new DiagnosticResult
             {

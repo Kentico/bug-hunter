@@ -101,7 +101,6 @@
     <Compile Include="Constants\DiagnosticIds.cs" />
     <Compile Include="Constants\DiagnosticProperties.cs" />
     <Compile Include="Constants\FileExtensions.cs" />
-    <Compile Include="DiagnosticsFormatting\IDiagnosticFormatter.cs" />
     <Compile Include="DiagnosticsFormatting\Implementation\DefaultDiagnosticFormatter.cs" />
     <Compile Include="DiagnosticsFormatting\Implementation\ConditionalAccessDiagnosticFormatter.cs" />
     <Compile Include="DiagnosticsFormatting\Implementation\MemberAccessOnlyDiagnosticFormatter.cs" />
@@ -119,6 +118,7 @@
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\InvocationExpressionSyntaxExtensions.cs" />
     <Compile Include="Extensions\StringExtenstions.cs" />
+    <Compile Include="Extensions\SymbolAnalysisContextExtensions.cs" />
     <Compile Include="Extensions\SyntaxNodeExtensions.cs" />
     <Compile Include="Extensions\TypeSymbolExtensions.cs" />
     <Compile Include="Helpers\DiagnosticDescriptors\BaseClassesInheritanceRulesProvider.cs" />

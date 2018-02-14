@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Zuzana Dankovcikova. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.CodeAnalysis;
 
@@ -20,12 +21,11 @@ namespace BugHunter.Core.DiagnosticsFormatting.Implementation
         /// <param name="descriptor">Diagnostic descriptor for diagnostic to be created</param>
         /// <param name="namedTypeSymbol">Named type symbol that the diagnostic should be raised for</param>
         /// <returns>Diagnostic created from descriptor for given named type symbol</returns>
-        public Diagnostic CreateDiagnostic(DiagnosticDescriptor descriptor, INamedTypeSymbol namedTypeSymbol)
+        public IEnumerable<Diagnostic> CreateDiagnostics(DiagnosticDescriptor descriptor, INamedTypeSymbol namedTypeSymbol)
         {
-            var location = namedTypeSymbol.Locations.FirstOrDefault();
-            var diagnostic = Diagnostic.Create(descriptor, location, namedTypeSymbol.Name);
-
-            return diagnostic;
+            return namedTypeSymbol.Locations
+                .Select(location =>
+                    Diagnostic.Create(descriptor, location, namedTypeSymbol.Name));
         }
     }
 }
